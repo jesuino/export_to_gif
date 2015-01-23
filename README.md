@@ -1,2 +1,2 @@
 # export_to_gif
-Export a JavaFX application to a gif given
+Export a JavaFX application to an animated GIF
