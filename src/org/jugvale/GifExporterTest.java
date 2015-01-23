@@ -63,7 +63,7 @@ public class GifExporterTest extends Application {
             try {
                 master.playFromStart();
                 if(chkExport.isSelected())
-                    GitExporterFX.captureNow(spContainer, (int) master.getTotalDuration().toMillis(), "/home/wsiqueir/jfx2.gif", 100, true);
+                    GitExporterFX.captureNow(spContainer, (int) master.getTotalDuration().toMillis(), "/home/wsiqueir/jfx3.gif", 100, true);
             } catch (IOException ex) {
                 Logger.getLogger(GifExporterTest.class.getName()).log(Level.SEVERE, null, ex);
             }
