@@ -5,7 +5,6 @@
  */
 package org.jugvale;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,18 +16,14 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Transition;
 import javafx.application.Application;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -67,7 +62,8 @@ public class GifExporterTest extends Application {
         btnStart.setOnAction(e -> {
             try {
                 master.playFromStart();
-                GitExporterFX.captureNow(spContainer, (int) master.getTotalDuration().toMillis(), "/home/william/jfx.gif", 100, true);
+                if(chkExport.isSelected())
+                    GitExporterFX.captureNow(spContainer, (int) master.getTotalDuration().toMillis(), "/home/wsiqueir/jfx2.gif", 100, true);
             } catch (IOException ex) {
                 Logger.getLogger(GifExporterTest.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -98,7 +94,6 @@ public class GifExporterTest extends Application {
 
         ParallelTransition pt = new ParallelTransition(st, rt);
         master = new SequentialTransition(pt, ft);
-
     }
 
 }
